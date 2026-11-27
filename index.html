@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EventHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>EventHub</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#events">Events</a>
+            <a href="#register">Register</a>
+            <a href="#myregister">My Registrations</a>
+            <a href="#dashboard">Dashboard</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Welcome to EventHub</h2>
+        <p>Explore college events and register for your favourite events.</p>
+    </section>
+
+    <section id="events">
+        <h2>Upcoming Events</h2>
+
+        <input type="text" id="search" placeholder="Search event">
+
+        <select id="category" onchange="showEvents()">
+            <option value="All">All Categories</option>
+            <option value="Technical Workshop">Technical Workshop</option>
+            <option value="Seminar">Seminar</option>
+            <option value="Coding Competition">Coding Competition</option>
+            <option value="Cultural Event">Cultural Event</option>
+            <option value="Career Development">Career Development</option>
+        </select>
+
+        <div id="eventList"></div>
+    </section>
+
+    <section id="register">
+        <h2>Event Registration</h2>
+
+        <form id="regForm">
+
+            <label>Name</label>
+            <input type="text" id="name" required>
+
+            <label>Email</label>
+            <input type="email" id="email" required>
+
+            <label>Mobile Number</label>
+            <input type="text" id="mobile" maxlength="10" required>
+
+            <label>Gender</label>
+            <div>
+                <input type="radio" name="gender" value="Male"> Male
+                <input type="radio" name="gender" value="Female"> Female
+                <input type="radio" name="gender" value="Other"> Other
+            </div>
+
+            <label>Department</label>
+            <select id="department" required>
+                <option value="">Select Department</option>
+                <option>CSE</option>
+                <option>ECE</option>
+                <option>EEE</option>
+                <option>Mechanical</option>
+                <option>Civil</option>
+            </select>
+
+            <label>Year</label>
+            <select id="year" required>
+                <option value="">Select Year</option>
+                <option>1st Year</option>
+                <option>2nd Year</option>
+                <option>3rd Year</option>
+                <option>4th Year</option>
+            </select>
+
+            <label>Select Event</label>
+            <select id="eventName" required>
+                <option value="">Select Event</option>
+            </select>
+
+            <label>Area of Interest</label>
+            <div>
+                <input type="checkbox" name="interest" value="Coding"> Coding
+                <input type="checkbox" name="interest" value="Technology"> Technology
+                <input type="checkbox" name="interest" value="Arts"> Arts
+                <input type="checkbox" name="interest" value="Career"> Career
+            </div>
+
+            <label>Comments</label>
+            <textarea id="comments"></textarea>
+
+            <button type="submit">Register</button>
+
+        </form>
+
+        <p id="message"></p>
+    </section>
+
+    <section id="myregister">
+        <h2>My Registrations</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Event</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="regTable"></tbody>
+        </table>
+    </section>
+
+    <section id="dashboard">
+        <h2>Dashboard</h2>
+
+        <p>Total Events: <span id="totalEvents"></span></p>
+        <p>Total Registrations: <span id="totalReg"></span></p>
+        <p>Technical Events: <span id="technical"></span></p>
+        <p>Cultural Events: <span id="cultural"></span></p>
+        <p>Cancelled Registrations: <span id="cancelled"></span></p>
+    </section>
+
+    <footer>
+        <p>EventHub | College Event Portal</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
