@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EventHub - Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>EventHub</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="events.html">Events</a>
+            <a href="registrations.html">Register</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Event Registration</h2>
+
+        <form id="regForm">
+
+            <label>Name</label>
+            <input type="text" id="name" required>
+
+            <label>Email</label>
+            <input type="email" id="email" required>
+
+            <label>Mobile Number</label>
+            <input type="text" id="mobile" maxlength="10" required>
+
+            <label>Gender</label>
+            <div>
+                <input type="radio" name="gender" value="Male"> Male
+                <input type="radio" name="gender" value="Female"> Female
+                <input type="radio" name="gender" value="Other"> Other
+            </div>
+
+            <label>Department</label>
+            <select id="department" required>
+                <option value="">Select Department</option>
+                <option>CSE</option>
+                <option>ECE</option>
+                <option>EEE</option>
+                <option>Mechanical</option>
+                <option>Civil</option>
+            </select>
+
+            <label>Year</label>
+            <select id="year" required>
+                <option value="">Select Year</option>
+                <option>1st Year</option>
+                <option>2nd Year</option>
+                <option>3rd Year</option>
+                <option>4th Year</option>
+            </select>
+
+            <label>Select Event</label>
+            <select id="eventName" required>
+                <option value="">Select Event</option>
+            </select>
+
+            <label>Area of Interest</label>
+            <div>
+                <input type="checkbox" name="interest" value="Coding"> Coding
+                <input type="checkbox" name="interest" value="Technology"> Technology
+                <input type="checkbox" name="interest" value="Arts"> Arts
+                <input type="checkbox" name="interest" value="Career"> Career
+            </div>
+
+            <label>Comments</label>
+            <textarea id="comments"></textarea>
+
+            <button type="submit">Register</button>
+
+        </form>
+
+        <p id="message"></p>
+    </section>
+
+    <section>
+        <h2>My Registrations</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Event</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="regTable"></tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>EventHub - College Event Management Portal</p>
+    </footer>
+
+    <script src="registration.js"></script>
+
+</body>
+</html>
